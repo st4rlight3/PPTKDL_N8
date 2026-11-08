@@ -50,6 +50,6 @@
 | Mẫu mới và tái lập | Tái sinh đúng cả 16.080 quan sát từ hai luồng. 402 khối 40 quan sát khác nhau. Hai lần chạy cùng seed khớp SHA-256 trên năm CSV, một JSON và hai PNG. [Nhật ký](../results/verification.txt) | PASS |
 | Kiểm thử tự động | `python -m unittest discover -s tests -v`. 15 kiểm thử đạt, gồm tham số sinh, tái lập, phân vị, hình, giới hạn trục histogram, ties, hiệu chỉnh liên tục và Welch. [Nhật ký](../results/verification.txt) | PASS |
 | Kiểm tra bằng mắt | Kiểm tra hai hình và toàn bộ bản PDF. Lỗi cắt đỉnh nhóm B ở lần vẽ đầu đã được sửa, chạy lại và có kiểm thử hồi quy. | PASS |
-| GitHub | Nhánh cục bộ `PPTKDL_N8` đã khởi tạo. Tại thời điểm lập bảng kiểm, việc xác nhận push lên kho đích đang chờ xác minh. | BLOCKED |
+| GitHub | Đã push nhánh `PPTKDL_N8` và đối chiếu SHA cục bộ với `git ls-remote`. [Kho công khai](https://github.com/st4rlight3/PPTKDL_N8/tree/PPTKDL_N8) | PASS |
 
 Lần rà soát cuối kiểm tra lại bộ đề trang 1, 9 và 12, toàn bộ tệp thống kê, hai biểu đồ, bảng 200 lần và hướng dẫn tái lập. Không có mục FAIL thuộc phạm vi phân tích và kiểm thử. Các mục BLOCKED được liệt kê theo sản phẩm còn cần hoàn tất.
