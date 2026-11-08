@@ -1,0 +1,20 @@
+# Môi trường Python và tệp tạm
+.deps/
+.deps-local/
+.wheelhouse/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mplconfig/
+tmp/
+.env
+.env.*
+*.pem
+*.key
+/reports/CONTRIBUTIONS.local.md
+
+# Bản PDF môn học lưu tại máy để đối chiếu nguồn
+/Bai giang TK va PT DL_v2_edit_1.pdf
+/Bo_de_bai_tap_nhom_Phuong_phap_thong_ke_du_lieu_sinh_vien.pdf

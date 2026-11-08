@@ -1,0 +1,36 @@
+Đề 8 — kiểm tra thực tế
+Lệnh: python -m src.main --seed 8; python -m unittest discover -s tests -v
+
+Tái lập — SHA-256 khớp giữa lần chạy bàn giao và lần chạy độc lập trong cùng môi trường
+cdec7d207e270634ab93fdbd9a87d72c963c5ea652ce50f6b881068455f50d2e  data/samples.csv
+0c0e2910f5c2f9ee021426dfb983397f767a527e7f45b6aa70ddd2f39d0f208f  data/simulation_samples.csv
+dcd8ab74630078090c0f24ec12ec6bec2d8f44e606477b0ba0193f14346e7dd8  results/descriptive.csv
+5a384c80c1ade3e8bbd9c801395a6b8a9c2ee0afa4a110e7d52ae36717282df2  results/ranks.csv
+0c9f702f540931bd6dc16f528acdbe1c17a51696c155260b5b372c9165a7805a  results/simulation_runs.csv
+595ba125abceb533ebfc32ca619be96e322b0087124f56f3ea565801d6a293bf  results/run.json
+5a9f94f73621cd0abbc9783c2c7617a33ed765aad5ccabd1f57f78f569d40e57  figures/histogram.png
+f5d426f9086b6cb41a243b46a166bea649db96c8a25d18448d330f5293b7a605  figures/boxplot.png
+
+Kiểm thử tự động
+test_histogram_counts_density_and_figure_files (test_descriptive.DescriptiveTests.test_histogram_counts_density_and_figure_files) ... ok
+test_histogram_shared_axis_contains_both_peaks (test_descriptive.DescriptiveTests.test_histogram_shared_axis_contains_both_peaks) ... ok
+test_invalid_samples (test_descriptive.DescriptiveTests.test_invalid_samples) ... ok
+test_quartiles_and_sample_standard_deviation (test_descriptive.DescriptiveTests.test_quartiles_and_sample_standard_deviation) ... ok
+test_two_seed_children_and_exponential_parameters (test_pipeline.DataGenerationTests.test_two_seed_children_and_exponential_parameters) ... ok
+test_outputs_and_reproducibility (test_pipeline.PipelineTests.test_outputs_and_reproducibility) ... ok
+test_central_and_all_tied_cases (test_rank_and_welch.MannWhitneyTests.test_central_and_all_tied_cases) ... ok
+test_midrank_variance_for_ties (test_rank_and_welch.MannWhitneyTests.test_midrank_variance_for_ties) ... ok
+test_separated_samples_and_continuity_correction (test_rank_and_welch.MannWhitneyTests.test_separated_samples_and_continuity_correction) ... ok
+test_ascending_ranks_preserve_observation_ids (test_rank_and_welch.PooledRankTests.test_ascending_ranks_preserve_observation_ids) ... ok
+test_invalid_samples (test_rank_and_welch.PooledRankTests.test_invalid_samples) ... ok
+test_ties_across_groups_and_within_group (test_rank_and_welch.PooledRankTests.test_ties_across_groups_and_within_group) ... ok
+test_invalid_inputs (test_rank_and_welch.WelchTests.test_invalid_inputs) ... ok
+test_sign_changes_and_p_value_is_two_sided (test_rank_and_welch.WelchTests.test_sign_changes_and_p_value_is_two_sided) ... ok
+test_statistic_and_df_from_hand_calculation (test_rank_and_welch.WelchTests.test_statistic_and_df_from_hand_calculation) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 1.235s
+
+OK
+
+Kiểm tra bổ sung với python -S: 13 phiên bản khớp requirements.txt, 8 tệp khớp SHA-256, 15 kiểm thử đạt.

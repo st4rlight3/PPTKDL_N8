@@ -1,0 +1,4 @@
+# Giữ nguyên byte của dữ liệu đã băm SHA-256 trong nhật ký kiểm tra.
+data/*.csv -text
+results/*.csv -text
+results/run.json -text
