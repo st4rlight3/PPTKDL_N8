@@ -167,14 +167,3 @@ Thiết kế dùng cùng tham số tỷ lệ mũ, cỡ mẫu cố định và ha
 
 Chương trình dùng Python 3.12.14, NumPy 2.3.5, SciPy 1.16.3 và Matplotlib 3.10.8. Chạy `python -m src.main` từ thư mục dự án sau khi cài các gói trong `requirements.txt`. Seed mặc định là 8.
 
-## Phụ lục B. Bảng phân công của nhóm
-
-Nhóm có năm thành viên theo danh sách được cung cấp. Mỗi mã trong bảng ứng với một thành viên trong danh sách đối chiếu nội bộ. Cột đóng góp chờ nhóm xác nhận phần việc thực tế.
-
-| Thành viên | Đóng góp thực tế |
-|---|---|
-| 01 | Chờ xác nhận |
-| 02 | Chờ xác nhận |
-| 03 | Chờ xác nhận |
-| 04 | Chờ xác nhận |
-| 05 | Chờ xác nhận |
