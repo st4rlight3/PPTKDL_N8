@@ -57,7 +57,7 @@ Khi không có ties, tổng bình phương là $N(N^2-1)/12$ và phương sai tr
 | Hạng mục | Căn cứ | Tình trạng |
 |---|---|---|
 | Số trang báo cáo | Bộ đề PDF 12, báo cáo 8–12 trang | PASS. Báo cáo dàn trang PDF 10 trang A4, đã kết xuất và kiểm tra từng trang. |
-| Thành viên và đóng góp | Bộ đề PDF 1 và 12, nhóm 4–5 sinh viên và bảng đóng góp | Phụ lục B ghi năm nhiệm vụ và các sản phẩm tương ứng. Bảng đối chiếu họ tên lưu riêng. BLOCKED đến khi nhóm xác nhận đóng góp cá nhân. |
+| Thành viên và đóng góp | Bộ đề PDF 1 và 12, nhóm 4–5 sinh viên và bảng đóng góp | Phụ lục B đã điền đóng góp theo phân công và sản phẩm tương ứng. Báo cáo ghi họ tên. Danh sách kèm mã sinh viên lưu riêng. Việc xác nhận đóng góp đã thực hiện thuộc nhóm. |
 | Bài trình bày | Bộ đề PDF 12, bài trình bày 8–10 trang | Người dùng phụ trách phần này. |
 | Đích GitHub | Chỉ dẫn bàn giao, mục 22 | Kho công khai mới và nhánh đích được ghi trong bảng kiểm bàn giao. |
 

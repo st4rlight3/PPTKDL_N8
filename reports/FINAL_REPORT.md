@@ -164,15 +164,15 @@ Chương trình dùng Python 3.12.14, NumPy 2.3.5, SciPy 1.16.3 và Matplotlib 3
 
 ## Phụ lục B. Bảng phân công của nhóm
 
-Năm đầu việc được bốc ngẫu nhiên. Bảng ghi sản phẩm đã có để từng thành viên đối chiếu với phần việc mình thực hiện. Nhóm xác nhận đóng góp cá nhân trước khi nộp.
+Nhóm bốc ngẫu nhiên năm đầu việc. Bảng dưới đây ghi cụ thể nội dung mỗi thành viên phụ trách và sản phẩm tương ứng.
 
-| Thành viên | Nhiệm vụ được giao | Sản phẩm đã có để đối chiếu | Đóng góp cá nhân |
+| Thành viên | Nhiệm vụ được giao | Sản phẩm đã có để đối chiếu | Đóng góp theo phân công |
 |---|---|---|---|
-| 01 | Dữ liệu mô phỏng, seed và kiểm tra tái lập | Hai tệp dữ liệu gốc, cấu hình seed và nhật ký chạy lại | Chờ xác nhận |
-| 02 | Mann–Whitney, bảng hạng và 200 lần mô phỏng | Bảng 80 hạng, kết quả kiểm định và bảng 200 lần lặp | Chờ xác nhận |
-| 03 | Thống kê mô tả, histogram và boxplot | Bảng thống kê, hai biểu đồ và phần nhận xét | Chờ xác nhận |
-| 04 | Điều phối, đối chiếu đề và tổng hợp báo cáo | Bản báo cáo 10 trang và bảng kiểm yêu cầu | Chờ xác nhận |
-| 05 | Welch, so sánh hai kiểm định và tổng hợp trình bày | Kết quả Welch và phần so sánh trong báo cáo | Chờ xác nhận |
+| Phạm Gia Minh | Dữ liệu mô phỏng, seed và kiểm tra tái lập | Hai tệp dữ liệu gốc, cấu hình seed và nhật ký chạy lại | Kiểm tra cỡ mẫu, lưu seed và chạy lại để đối chiếu kết quả. |
+| Phương Bảo Vỹ | Mann–Whitney, bảng hạng và 200 lần mô phỏng | Bảng 80 hạng, kết quả kiểm định và bảng 200 lần lặp | Gộp mẫu, xếp hạng, tính U và tổng hợp quyết định qua 200 lần lặp. |
+| Nguyễn Đức Thành | Thống kê mô tả, histogram và boxplot | Bảng thống kê, hai biểu đồ và phần nhận xét | Tính trung bình, trung vị, SD và IQR. Nhận xét hai biểu đồ. |
+| Phan Nguyễn Trung Khánh | Điều phối, đối chiếu đề và tổng hợp báo cáo | Bản báo cáo 10 trang và bảng kiểm yêu cầu | Đối chiếu bảy yêu cầu của đề và tổng hợp các phần vào báo cáo. |
+| Phùng Quốc Khánh Nam | Welch, so sánh hai kiểm định và tổng hợp trình bày | Kết quả Welch và phần so sánh trong báo cáo | Tính t, bậc tự do và p-value của Welch. Giải thích sự khác nhau giữa hai kiểm định. |
 
 ## Tài liệu tham khảo
 

@@ -18,7 +18,7 @@
 | Vị trí | Yêu cầu | Mã, đầu ra và bằng chứng | Trạng thái |
 |---|---|---|---|
 | Trang 1, §1 | Mục tiêu học tập | Báo cáo §1–9 trình bày thiết kế mô phỏng, kiến thức áp dụng, cách đọc kết quả và giới hạn suy luận. | PASS |
-| Trang 1, §2.1 | Nhóm 4–5 sinh viên, thời gian dự kiến 3 tuần | Đã nhận danh sách 5 thành viên. Báo cáo công khai dùng mã 01–05. Thời gian dự kiến thuộc kế hoạch tổ chức của nhóm. | PASS |
+| Trang 1, §2.1 | Nhóm 4–5 sinh viên, thời gian dự kiến 3 tuần | Báo cáo ghi họ tên của 5 thành viên. Thời gian dự kiến thuộc kế hoạch tổ chức của nhóm. | PASS |
 | Trang 1, §2.2 | Công cụ và bước xử lý | [README.md](../README.md), [METHODOLOGY.md](METHODOLOGY.md) và trường môi trường của [run.json](../results/run.json) ghi Python, phiên bản thư viện và quy trình. | PASS |
 | Trang 1, §2.3 | Dữ liệu mô phỏng | Báo cáo §1, §3, §9 và cấu hình `simulated_data` trong run.json xác định rõ nguồn mô phỏng. | PASS |
 | Trang 1, §2.4 | Seed, dữ liệu, mã và kết quả tái lập | Có seed 8, hai CSV dữ liệu, toàn bộ mã và tám tệp đầu ra có SHA-256 khớp khi chạy lại. [Nhật ký chạy lại](../results/verification.txt) | PASS |
@@ -38,7 +38,7 @@
 | Trang 12, sản phẩm 2 | Dữ liệu chi tiết và bảng kết quả lặp | [Mẫu chính](../data/samples.csv) có 80 dòng. [Dữ liệu lặp](../data/simulation_samples.csv) có 16.000 dòng. [Bảng lần lặp](../results/simulation_runs.csv) có 200 dòng và lưu p-value, quyết định. | PASS |
 | Trang 12, sản phẩm 3 | Mã, seed và lệnh chạy lại | [README.md](../README.md) hướng dẫn cài gói, `python -m src.main` và seed. Đã kiểm tra chạy thật và tái lập. | PASS |
 | Trang 12, sản phẩm 4 | Bài trình chiếu 8–10 trang | Người dùng phụ trách phần trình chiếu. | BLOCKED |
-| Trang 12, sản phẩm 5 | Phân công và đóng góp | Phụ lục B ghi nhiệm vụ và sản phẩm đã có để đối chiếu cho 5 mã thành viên. Chờ nhóm xác nhận ai thực hiện từng phần. | BLOCKED |
+| Trang 12, sản phẩm 5 | Phân công và đóng góp | Phụ lục B ghi rõ nhiệm vụ, đóng góp theo phân công và sản phẩm tương ứng cho cả 5 thành viên. Việc xác nhận người thực hiện từng sản phẩm thuộc nhóm. | BLOCKED |
 | Trang 12, đoạn cuối | Vai trò kiến thức chương 1–5 | Báo cáo §2 có bảng riêng về từng chương và vai trò đối với phân tích chính ở chương 7. | PASS |
 
 ## Lớp 3 · Thực thi và kiểm thử
