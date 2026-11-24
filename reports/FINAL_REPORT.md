@@ -4,15 +4,15 @@
 
 ## 1. Tình huống và mục tiêu
 
-Một hệ thống mạng có thể truyền dữ liệu theo hai phương án định tuyến, A và B. Độ trễ của từng lần truyền được tính bằng mili giây (ms). Bài toán dùng hai mẫu mô phỏng độc lập để xem phương án nào có xu hướng cho độ trễ thấp hơn và mức bằng chứng thay đổi ra sao khi tiêu chí so sánh là thứ hạng hoặc trung bình.
+Độ trễ là thời gian cần để dữ liệu đi qua mạng, tính bằng mili giây (ms). Đề 8 đặt ra hai phương án định tuyến A và B rồi mô phỏng 40 phiên truyền độc lập cho mỗi phương án. Câu hỏi của bài là phương án nào thường có độ trễ thấp hơn và một mẫu cỡ 40 mỗi nhóm cho thấy khác biệt rõ đến đâu.
 
-Phân tích dùng 40 quan sát cho mỗi phương án. Trước hết, báo cáo mô tả mức điển hình, độ phân tán và phần đuôi của hai mẫu. Sau đó, kiểm định Mann–Whitney hai phía đánh giá khác biệt giữa các phân phối trong thiết kế cùng dạng dịch vị trí, còn Welch hai phía đánh giá chênh lệch trung bình. Mức ý nghĩa là 5% cho cả hai kiểm định. Cuối cùng, 200 cặp mẫu mới dùng để ước lượng tần suất Mann–Whitney phát hiện sự dịch chuyển trong mô hình đã cho.
+Nhóm dùng bảng thống kê và biểu đồ để xem các giá trị tập trung ở đâu, phân tán thế nào. Sau đó, nhóm so sánh thứ hạng bằng Mann–Whitney và so sánh trung bình bằng Welch. Cả hai kiểm định đều xét hai phía ở mức ý nghĩa 5%. Để xem kết quả Mann–Whitney thay đổi thế nào khi lấy mẫu mới, nhóm lặp lại phép thử 200 lần.
 
 ## Tóm tắt
 
-Theo mô hình của đề, B có phân phối độ trễ dịch xuống 4 ms so với A. Ở mẫu chính, trung bình mẫu của B thấp hơn A 3,493 ms và trung vị mẫu thấp hơn 4,981 ms. Mann–Whitney bác bỏ giả thuyết hai phân phối bằng nhau (U<sub>A</sub> = 1.070, p = 0,009507). Welch cho p = 0,118994, nên bằng chứng về chênh lệch trung bình ở riêng mẫu này chưa đạt mức 5%. Mann–Whitney bác bỏ trong 147/200 lần lặp (73,5%).
+Theo mô hình của đề, phân phối độ trễ của B dịch xuống 4 ms so với A. Trong mẫu chính, độ trễ trung bình của B thấp hơn A khoảng 3,49 ms. Mann–Whitney cho p = 0,009507 và bác bỏ giả thuyết hai phân phối bằng nhau. Welch cho p = 0,118994, nên mẫu này chưa cho đủ bằng chứng về chênh lệch trung bình ở mức 5%. Mann–Whitney phát hiện khác biệt trong 147/200 lần lặp (73,5%).
 
-Phạm vi kết luận là cơ chế sinh dữ liệu của Đề 8. Việc suy rộng sang mạng đang vận hành đòi hỏi dữ liệu đo phù hợp với hệ thống cần đánh giá. Kết quả dùng seed 8 và tham chiếu đến bộ đề [Đ] cùng bài giảng [GT]. Số trang trích dẫn là số in trên tài liệu. [Thông tin tài liệu nguồn](../references/README.md)
+Tất cả số liệu trong báo cáo là kết quả mô phỏng với seed 8. Các ký hiệu [Đ] và [GT] lần lượt chỉ bộ đề và bài giảng. Số trang trích dẫn là số in trên tài liệu. [Thông tin tài liệu nguồn](../references/README.md)
 
 <!-- pagebreak -->
 
@@ -26,7 +26,7 @@ Trong mỗi mẫu, các quan sát được sinh độc lập từ cùng một m�
 
 ### Mức ý nghĩa và xác suất ở đuôi
 
-H₀ là giả thuyết đang được kiểm tra. Giá trị p lượng hóa mức cực đoan của thống kê quan sát dưới H₀ theo quy tắc của kiểm định. Với kiểm định hai phía, cả hai chiều khác biệt đều được xét. Mức ý nghĩa α đặt ngưỡng cho quyết định bác bỏ. [GT] §5.1.3.1–3, trang 129–134.
+Nếu giả thuyết gốc H₀ đúng, p-value là xác suất thu được thống kê kiểm định ít nhất cũng cực đoan như giá trị quan sát, theo quy tắc của phép kiểm định. Kiểm định hai phía tính đến khác biệt theo cả hai chiều. Bài dùng ngưỡng ý nghĩa α = 0,05. [GT] §5.1.3.1–3, trang 129–134.
 
 ### Vai trò của Chương 1–5 đối với Chương 7
 
@@ -46,7 +46,7 @@ Các bước xếp hạng và kiểm định chính theo Chương 7. Căn cứ v
 
 Nhóm A lấy X = 20 + Z và nhóm B lấy Y = 16 + Z′, trong đó Z, Z′ có cùng phân phối mũ với kỳ vọng 10 ms. Do 1/λ = 10 ms, λ = 0,1 ms⁻¹. Các cận dưới là 20 ms cho A và 16 ms cho B. Kỳ vọng theo mô hình là 30 và 26 ms, phương sai của mỗi nhóm là 100 ms². Các đại lượng này đặc tả tổng thể mô phỏng. [Đ] trang 9 và [GT] §1.3.2.1–2, §1.5.2.2.
 
-Từ seed gốc 8, NumPy tách hai seed con cho hai luồng PCG64. Mỗi luồng sinh 40 giá trị qua `Generator.exponential(scale=10, size=40)`, sau đó cộng hằng số dịch của nhóm. Chương trình lưu các quan sát theo thứ tự phát sinh. Mẫu chính và 200 lần lặp lấy các khối liên tiếp từ hai luồng. [Dữ liệu mẫu chính](../data/samples.csv)
+NumPy tách seed gốc 8 thành hai seed con để khởi tạo hai bộ sinh PCG64, mỗi phương án dùng một bộ sinh. Mỗi lượt, chương trình gọi `Generator.exponential(scale=10, size=40)` cho từng nhóm rồi cộng 20 ms hoặc 16 ms. Hai bộ sinh tiếp tục từ trạng thái hiện tại ở mỗi lần lặp. Chương trình lưu thứ tự phát sinh để có thể đối chiếu từng giá trị. [Dữ liệu mẫu chính](../data/samples.csv)
 
 ### Đại lượng tính từ mẫu
 
@@ -57,7 +57,7 @@ Với xᵢ là quan sát thứ i trong một nhóm, x̄ = Σxᵢ/n và s = √[�
 | A | 40 | 29,809 | 28,034 | 9,273 | 21,926 | 34,653 | 12,726 |
 | B | 40 | 26,316 | 23,053 | 10,505 | 19,422 | 27,614 | 8,192 |
 
-B có mức điển hình thấp hơn theo cả trung bình và trung vị mẫu. Nửa giữa của B hẹp hơn, trong khi SD của B lớn hơn. IQR mô tả vùng giữa, còn SD sử dụng khoảng cách đến trung bình của tất cả các giá trị, nên phần đuôi có thể làm hai thước đo phản ánh những khía cạnh khác nhau. [Bảng thống kê đầy đủ](../results/descriptive.csv)
+Trung bình và trung vị mẫu đều thấp hơn ở B. IQR của B cũng nhỏ hơn, tức nửa giữa của mẫu tập trung hơn. Độ lệch chuẩn của B lại cao hơn vì thước đo này tính cả các quan sát nằm xa trung bình. Biểu đồ hộp ở §5 cho thấy các điểm độ trễ cao của B. [Bảng thống kê đầy đủ](../results/descriptive.csv)
 
 <!-- pagebreak -->
 
@@ -67,9 +67,9 @@ B có mức điển hình thấp hơn theo cả trung bình và trung vị mẫu
 
 *Hình 1. Mật độ thực nghiệm của độ trễ theo hai phương án.*
 
-Cả hai nhóm dùng chung sáu khoảng lớp độ rộng khoảng 7,551 ms, trải từ 16,858 đến 62,163 ms. Chiều cao là số quan sát trong lớp chia cho cỡ mẫu và độ rộng lớp. Tổng diện tích các cột của từng nhóm bằng 1. Cách đặt lớp chung giúp đối chiếu trực tiếp hai nhóm. [GT] §3.3.2, trang 74–76.
+Cả hai nhóm dùng chung sáu khoảng lớp, mỗi khoảng rộng khoảng 7,551 ms, từ 16,858 đến 62,163 ms. Nhờ dùng cùng các mốc, có thể so hai nhóm ngay trong từng khoảng độ trễ. Chiều cao mỗi cột bằng số quan sát trong khoảng chia cho 40 và độ rộng khoảng. Tổng diện tích các cột của mỗi nhóm bằng 1. [GT] §3.3.2, trang 74–76.
 
-Trong lớp đầu đến 24,409 ms có 15 quan sát A và 23 quan sát B. Ở hai lớp cuối, mỗi nhóm chỉ có hai quan sát. Khối quan sát tập trung ở vùng thấp và thưa dần về phía độ trễ cao, phù hợp với đuôi phải của mô hình. Mẫu B tập trung hơn ở các lớp đầu nhưng vẫn có quan sát đến 62,163 ms. Các lớp mô tả mẫu đã sinh và giữ đủ 40 quan sát mỗi nhóm.
+Khoảng đầu tiên, đến 24,409 ms, có 15 quan sát của A và 23 quan sát của B. Ở hai khoảng cuối, mỗi nhóm chỉ có hai quan sát. Các giá trị tập trung ở vùng độ trễ thấp và thưa hơn về phía phải. B có nhiều quan sát ở vùng thấp, đồng thời có một giá trị lên đến 62,163 ms.
 
 <!-- pagebreak -->
 
@@ -81,13 +81,13 @@ Trong lớp đầu đến 24,409 ms có 15 quan sát A và 23 quan sát B. Ở h
 
 Hộp biểu thị Q₁ đến Q₃. Đường trong hộp là trung vị. Hai râu vẽ đến min và max theo quy ước tóm tắt năm số. Các chấm biểu diễn toàn bộ độ trễ của mẫu. [GT] §5.3.2.1, trang 151 và Bài 3.6, trang 93.
 
-Hộp B nằm thấp hơn và ngắn hơn hộp A. Hai khoảng quan sát vẫn chồng lên nhau. Râu trên kéo dài đến 57,871 ms ở A và 62,163 ms ở B, vượt đáng kể Q₃ của mỗi nhóm. Điều đó giúp giải thích vì sao B có SD lớn hơn dù IQR nhỏ hơn. Do boxplot dùng râu min–max, các điểm xa hộp được mô tả là quan sát ở đuôi. Mọi điểm đều được giữ trong phân tích.
+Hộp của B hẹp hơn và nằm về phía độ trễ thấp hơn so với hộp của A. Hai mẫu vẫn có nhiều giá trị ở cùng vùng. Ở phía độ trễ cao, râu kéo đến 57,871 ms ở A và 62,163 ms ở B. Các điểm xa hộp của B giúp giải thích vì sao độ lệch chuẩn của B lớn hơn dù IQR nhỏ hơn. Hình dùng râu từ giá trị nhỏ nhất đến lớn nhất và mọi quan sát đều được giữ khi tính toán.
 
 <!-- pagebreak -->
 
 ## 6. Mann–Whitney hai phía và bảng hạng
 
-Kiểm định xét H₀: Fₓ = Fᵧ, đối lại H₁: Fₓ ≠ Fᵧ. Bài giảng đặt bài toán cho hai mẫu độc lập từ các phân phối liên tục và xây dựng diễn giải vị trí với hai phân phối cùng dạng. Ở đây phân phối mũ dịch lệch phải, thỏa thiết kế độc lập và cùng dạng. [GT] §7.2–7.2.1, trang 210–213.
+Giả thuyết H₀ là A và B có cùng phân phối độ trễ (Fₓ = Fᵧ). Giả thuyết H₁ là hai phân phối khác nhau (Fₓ ≠ Fᵧ). Hai mẫu được sinh độc lập từ các phân phối liên tục và lệch phải. Vì đề cho hai phân phối cùng dạng, nhóm có thể dùng kết quả thứ hạng để bàn về sự dịch chuyển vị trí. [GT] §7.2–7.2.1, trang 210–213.
 
 Gộp và sắp tăng 80 quan sát, giữ nhóm và chỉ số gốc rồi gán hạng từ 1. Nếu có quan sát bằng nhau, mỗi quan sát nhận hạng trung bình của các vị trí tương ứng theo quy tắc hạng gộp ở §7.3.1, trang 214. Mẫu chính không có hạng trùng.
 
@@ -97,7 +97,7 @@ Gộp và sắp tăng 80 quan sát, giữ nhóm và chỉ số gốc rồi gán 
 | 2 | B | 21 | 16,911 |
 | 3 | B | 20 | 16,926 |
 
-Tổng hạng R<sub>A</sub> = 1.890 và R<sub>B</sub> = 1.350, cộng bằng 80 × 81/2 = 3.240. Các đẳng thức in ở trang 212 đồng nhất U với tổng hạng và đồng thời cộng thêm hằng số, mâu thuẫn với tâm của U ở trang 213. Theo quy ước người dùng đã xác nhận, U<sub>A</sub> = R<sub>A</sub> − 820 = 1.070 và U<sub>B</sub> = R<sub>B</sub> − 820 = 530. Có đúng 1.070 cặp chéo với A > B và 530 cặp với B > A trong 1.600 cặp. [Bảng 80 hạng](../results/ranks.csv) · [Công thức gốc và kiểm chứng](ISSUES.md)
+Tổng hạng của A là R<sub>A</sub> = 1.890 và của B là R<sub>B</sub> = 1.350. Hai số cộng lại bằng 80 × 81/2 = 3.240. Cách viết U ở trang 212 không khớp với kỳ vọng của U ở trang 213. Bài dùng U<sub>A</sub> = R<sub>A</sub> − 820 = 1.070 và U<sub>B</sub> = R<sub>B</sub> − 820 = 530. Số 820 là tổng hạng từ 1 đến 40. Kiểm tra trực tiếp 1.600 cặp chéo cho đúng 1.070 cặp A > B và 530 cặp B > A. [Bảng 80 hạng](../results/ranks.csv) · [Công thức gốc và kiểm chứng](ISSUES.md)
 
 Với U* = max(U<sub>A</sub>,U<sub>B</sub>), tâm 800 và phương sai 10.800 theo (7.8), z = (1.070 − 800 − 0,5)/√10.800 = 2,593265. Hiệu chỉnh 0,5 dùng trước khi lấy xác suất hai đuôi, p = min(1, 2P(Z ≥ z)) = 0,009507. Hàm `scipy.stats.mannwhitneyu(a, b, ...)` khớp cả U<sub>A</sub> và p khi dùng `method="asymptotic"`, `alternative="two-sided"` và `use_continuity=True`. Vì p ≤ 0,05, bác bỏ H₀. Thứ hạng quan sát nghiêng về độ trễ lớn hơn ở A, phù hợp với chiều dịch đã biết của mô hình.
 
@@ -119,7 +119,7 @@ Welch xét H₀: μ<sub>A</sub> − μ<sub>B</sub> = 0, đối lại H₁: μ<su
 
 Theo quy ước làm tròn xuống ở trang 159, p = 2P(T₇₆ ≥ |t|). Giá trị p lớn hơn 0,05, nên chưa đủ bằng chứng bác bỏ giả thuyết bằng nhau về trung bình. Ước lượng chênh lệch mẫu vẫn dương. Welch yêu cầu hai mẫu độc lập và công thức t của bài giảng được dẫn xuất trong bối cảnh tổng thể chuẩn. Với hai mẫu mũ dịch cỡ 40 và phương sai tổng thể hữu hạn, bài dùng Welch theo yêu cầu của đề và xem kết quả là xấp xỉ, dựa vào lập luận về phân phối của trung bình mẫu. [GT] §4.4.1, §5.3.2.2, trang 102–103, 153–160.
 
-Mann–Whitney dùng thứ tự và trong mô hình này có thể diễn giải theo dịch vị trí. Welch sử dụng độ lớn của các giá trị để so sánh trung bình, với sai số chuẩn phụ thuộc phương sai mẫu. Hai kiểm định cho quyết định khác nhau tại mức 5% vì chúng dùng thông tin và giả thuyết khác nhau. Một kết quả có ý nghĩa thống kê cho thứ hạng có thể đi cùng bằng chứng chưa đủ mạnh về chênh lệch trung bình.
+Trong mô hình cùng dạng và chỉ dịch vị trí của đề, hai phân phối trùng nhau khi độ dịch bằng 0. Đây cũng là lúc hai trung bình tổng thể bằng nhau. Hai kiểm định vẫn có thể cho quyết định khác nhau trên cùng mẫu. Mann–Whitney chỉ dùng thứ tự các giá trị, còn Welch dùng chênh lệch trung bình và phương sai mẫu, nên độ lớn của các quan sát ở đuôi ảnh hưởng trực tiếp đến kết quả Welch.
 
 <!-- pagebreak -->
 
@@ -127,7 +127,7 @@ Mann–Whitney dùng thứ tự và trong mô hình này có thể diễn giải
 
 Mỗi lần lặp sinh thêm 40 quan sát A và 40 quan sát B, áp dụng đúng quy tắc Mann–Whitney hai phía của mẫu chính rồi lưu p-value và quyết định. Hai luồng tiếp tục từ trạng thái sau lần sinh trước. Trong 200 lần lặp có 147 lần bác bỏ và 53 lần chưa bác bỏ H₀, cho tỷ lệ phát hiện 147/200 = 73,5%. Giá trị U và p-value được đối chiếu với SciPy ở mọi lần. Sai lệch tuyệt đối lớn nhất giữa hai p-value là 1,94 × 10⁻¹⁶. [Kết quả từng lần](../results/simulation_runs.csv) · [Dữ liệu sinh từng lần](../data/simulation_samples.csv)
 
-Tỷ lệ này là tần suất quan sát của kiểm định dưới mô hình dịch 4 ms, cỡ mẫu 40 mỗi nhóm và mức 5%. Nó ước lượng xác suất phát hiện trong thiết kế đã cố định. Một quyết định tương ứng với 0,5 điểm phần trăm và lần chạy bằng seed khác có thể cho tần suất khác. [GT] §5.2.1.2, trang 139–144.
+Tỷ lệ 73,5% ước lượng xác suất phát hiện khác biệt của Mann–Whitney khi mô hình dịch 4 ms, mỗi nhóm có 40 quan sát và mức ý nghĩa là 5%. Với 200 lần lặp, thêm hoặc bớt một lần bác bỏ sẽ làm tỷ lệ thay đổi 0,5 điểm phần trăm. Dùng seed khác có thể cho tỷ lệ khác. [GT] §5.2.1.2, trang 139–144.
 
 Không có hạng trùng trong mẫu chính và 200 lần lặp. Chương trình kiểm thử riêng với mẫu có giá trị trùng, bao gồm trường hợp tất cả giá trị bằng nhau. Hiệu chỉnh phương sai khi có ties là phần mở rộng kỹ thuật được xác nhận và đối chiếu SciPy. [Chi tiết phương pháp](METHODOLOGY.md) · [Kiểm chứng và giới hạn nguồn](ISSUES.md)
 
@@ -141,16 +141,11 @@ Trong thiết kế ghép cặp, hai phép đo phải thuộc cùng đơn vị ho
 
 ## 9. Thảo luận và kết luận
 
-B có độ trễ thấp hơn trong mô hình vì hai phân phối cùng dạng và vị trí của B thấp hơn 4 ms. Chênh lệch này đến từ hai hằng số dịch đã cho. Trong mẫu, chênh lệch trung bình quan sát là 3,493 ms và chênh lệch trung vị là 4,981 ms, đều theo chiều B thấp hơn. Vùng giữa của B hẹp hơn nhưng phần đuôi phía trên vẫn chứa các độ trễ lớn. Trong thực hành, một lựa chọn định tuyến có thể cần cân nhắc đồng thời mức điển hình và độ trễ ở đuôi.
+Theo mô hình của đề, B có độ trễ thấp hơn vì hai phân phối cùng dạng và B dịch xuống 4 ms. Con số 4 ms đến từ hai hằng số trong đề. Với mẫu đã sinh, trung bình của B thấp hơn 3,493 ms và trung vị thấp hơn khoảng 4,981 ms. Vùng giữa của B hẹp hơn, đồng thời mẫu B vẫn có vài phiên có độ trễ lớn.
 
-Ở mức 5%, Mann–Whitney (U<sub>A</sub> = 1.070, p = 0,009507) cho bằng chứng về khác biệt phân phối và chiều thứ hạng phù hợp với vị trí thấp hơn của B. Diễn giải dịch vị trí dựa vào hai phân phối cùng dạng theo mô hình. Welch (t = 1,576805, p = 0,118994) cho bằng chứng chưa đủ để kết luận chênh lệch trung bình ở mẫu chính. Thứ hạng và trung bình là hai đích suy luận khác nhau. Tỷ lệ 73,5% qua 200 lần lặp mô tả hiệu năng của Mann–Whitney trong cấu hình mô phỏng đã chọn.
+Ở mức 5%, Mann–Whitney cho thấy thứ hạng của A có xu hướng cao hơn B. Giả thiết cùng dạng giúp diễn giải kết quả này theo vị trí. Welch cho p = 0,118994, nên riêng mẫu chính chưa cho đủ bằng chứng về chênh lệch trung bình. Kết quả 147/200 lần phát hiện cho thấy ngay cả khi mô hình có độ dịch 4 ms, những mẫu khác nhau vẫn có thể dẫn đến quyết định khác nhau.
 
-Thiết kế dùng cùng tham số tỷ lệ mũ, cỡ mẫu cố định và hai luồng độc lập. Độ trễ đo trên mạng có thể có hình dạng, mức biến thiên hoặc quan hệ phụ thuộc khác. Khi áp dụng cho một hệ thống thực tế, chất lượng kết luận phụ thuộc vào thiết kế đo và mức phù hợp của các điều kiện kiểm định. Một tỷ lệ từ 200 lần lặp cũng có biến thiên do lấy mẫu hữu hạn.
-
-## Tài liệu tham khảo
-
-1. **[Đ] Bộ đề bài tập nhóm Phương pháp thống kê dữ liệu.** Yêu cầu và quy ước, trang 1. Đề 8, trang 9. Sản phẩm nộp, trang 12.
-2. **[GT] Bài giảng Phương pháp thống kê dữ liệu.** Chương 1, §1.3.2, §1.4.3, §1.5.2.2. Chương 2, §2.4.2–3. Chương 3, §3.3. Chương 4, §4.1–4.4. Chương 5, §5.1–5.3. Chương 7, §7.2–7.3. [Chỉ mục trang và thông tin bản gốc](SOURCE_MAPPING.md)
+Kết luận trên áp dụng cho dữ liệu mô phỏng đã chọn. Độ trễ trên mạng đang vận hành có thể phụ thuộc vào tải mạng và thời điểm đo. Muốn so sánh hai phương án trên hệ thống đó, cần có dữ liệu đo thực tế và xem các điều kiện của phép kiểm định có còn phù hợp hay không.
 
 <!-- pagebreak -->
 
@@ -167,3 +162,19 @@ Thiết kế dùng cùng tham số tỷ lệ mũ, cỡ mẫu cố định và ha
 
 Chương trình dùng Python 3.12.14, NumPy 2.3.5, SciPy 1.16.3 và Matplotlib 3.10.8. Chạy `python -m src.main` từ thư mục dự án sau khi cài các gói trong `requirements.txt`. Seed mặc định là 8.
 
+## Phụ lục B. Bảng phân công của nhóm
+
+Năm đầu việc được bốc ngẫu nhiên. Bảng ghi sản phẩm đã có để từng thành viên đối chiếu với phần việc mình thực hiện. Nhóm xác nhận đóng góp cá nhân trước khi nộp.
+
+| Thành viên | Nhiệm vụ được giao | Sản phẩm đã có để đối chiếu | Đóng góp cá nhân |
+|---|---|---|---|
+| 01 | Dữ liệu mô phỏng, seed và kiểm tra tái lập | Hai tệp dữ liệu gốc, cấu hình seed và nhật ký chạy lại | Chờ xác nhận |
+| 02 | Mann–Whitney, bảng hạng và 200 lần mô phỏng | Bảng 80 hạng, kết quả kiểm định và bảng 200 lần lặp | Chờ xác nhận |
+| 03 | Thống kê mô tả, histogram và boxplot | Bảng thống kê, hai biểu đồ và phần nhận xét | Chờ xác nhận |
+| 04 | Điều phối, đối chiếu đề và tổng hợp báo cáo | Bản báo cáo 10 trang và bảng kiểm yêu cầu | Chờ xác nhận |
+| 05 | Welch, so sánh hai kiểm định và tổng hợp trình bày | Kết quả Welch và phần so sánh trong báo cáo | Chờ xác nhận |
+
+## Tài liệu tham khảo
+
+1. **[Đ] Bộ đề bài tập nhóm Phương pháp thống kê dữ liệu.** Yêu cầu chung (tr. 1), Đề 8 (tr. 9), sản phẩm nộp (tr. 12).
+2. **[GT] Bài giảng Phương pháp thống kê dữ liệu.** Ch. 1 (§1.3.2, §1.4.3, §1.5.2.2), Ch. 2 (§2.4.2–3), Ch. 3 (§3.3), Ch. 4 (§4.1–4.4), Ch. 5 (§5.1–5.3) và Ch. 7 (§7.2–7.3). [Bảng đối chiếu trang in và trang PDF](SOURCE_MAPPING.md)

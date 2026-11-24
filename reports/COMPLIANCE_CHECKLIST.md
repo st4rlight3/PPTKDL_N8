@@ -38,7 +38,7 @@
 | Trang 12, sản phẩm 2 | Dữ liệu chi tiết và bảng kết quả lặp | [Mẫu chính](../data/samples.csv) có 80 dòng. [Dữ liệu lặp](../data/simulation_samples.csv) có 16.000 dòng. [Bảng lần lặp](../results/simulation_runs.csv) có 200 dòng và lưu p-value, quyết định. | PASS |
 | Trang 12, sản phẩm 3 | Mã, seed và lệnh chạy lại | [README.md](../README.md) hướng dẫn cài gói, `python -m src.main` và seed. Đã kiểm tra chạy thật và tái lập. | PASS |
 | Trang 12, sản phẩm 4 | Bài trình chiếu 8–10 trang | Người dùng phụ trách phần trình chiếu. | BLOCKED |
-| Trang 12, sản phẩm 5 | Phân công và đóng góp | Phụ lục B có 5 mã thành viên. Chờ nhóm cung cấp phần việc và đóng góp thực tế. | BLOCKED |
+| Trang 12, sản phẩm 5 | Phân công và đóng góp | Phụ lục B ghi nhiệm vụ và sản phẩm đã có để đối chiếu cho 5 mã thành viên. Chờ nhóm xác nhận ai thực hiện từng phần. | BLOCKED |
 | Trang 12, đoạn cuối | Vai trò kiến thức chương 1–5 | Báo cáo §2 có bảng riêng về từng chương và vai trò đối với phân tích chính ở chương 7. | PASS |
 
 ## Lớp 3 · Thực thi và kiểm thử

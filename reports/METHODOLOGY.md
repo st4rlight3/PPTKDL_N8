@@ -29,7 +29,7 @@ H₀ là Fₓ = Fᵧ, H₁ là Fₓ ≠ Fᵧ. [GT] §7.2–7.2.1, trang 210–21
 
 Đặt H₀ là μ<sub>A</sub> − μ<sub>B</sub> = 0 và H₁ là μ<sub>A</sub> − μ<sub>B</sub> ≠ 0. Theo [GT] §5.3.2.2, (5.38), (5.40) và Bảng 5.7, trang 159–160, tính wⱼ = sⱼ²/nⱼ, SE = √(w<sub>A</sub> + w<sub>B</sub>) và t = (x̄ − ȳ)/SE. Bậc tự do ν = (w<sub>A</sub> + w<sub>B</sub>)²/[w<sub>A</sub>²/(n<sub>A</sub> − 1) + w<sub>B</sub>²/(n<sub>B</sub> − 1)]. Tính p hai phía bằng `2 * scipy.stats.t.sf(abs(t), floor(ν))` theo quy ước làm tròn xuống ở trang 159, và bác bỏ khi p < 0,05 theo §5.1.3.3. Ghi thêm p của `ttest_ind(a, b, equal_var=False, alternative="two-sided")` với ν thập phân để đối chiếu.
 
-Welch dùng hai mẫu độc lập và hai ước lượng phương sai riêng. Dẫn xuất xấp xỉ t trong bài giảng đặt trong bối cảnh tổng thể chuẩn. Dữ liệu Đề 8 là mũ dịch. Việc dùng Welch là yêu cầu của đề, với chênh lệch trung bình được xấp xỉ theo lập luận mẫu lớn ở [GT] §4.4.1 và §5.3.2.2. Cỡ mẫu 40 mỗi nhóm không bảo đảm xấp xỉ có mức danh nghĩa chính xác. Hai kiểm định có đối tượng khác nhau ngay cả khi quyết định cùng chiều.
+Welch dùng hai mẫu độc lập và hai ước lượng phương sai riêng. Dẫn xuất xấp xỉ t trong bài giảng đặt trong bối cảnh tổng thể chuẩn. Dữ liệu Đề 8 là mũ dịch. Việc dùng Welch là yêu cầu của đề, với chênh lệch trung bình được xấp xỉ theo lập luận mẫu lớn ở [GT] §4.4.1 và §5.3.2.2. Với 40 quan sát mỗi nhóm, mức ý nghĩa thực tế cần được hiểu trong giới hạn của phép xấp xỉ. Trong mô hình chỉ dịch vị trí, hai giả thuyết gốc cùng ứng với độ dịch bằng 0. Hai phép kiểm định vẫn có thể cho quyết định khác nhau vì dùng thống kê khác nhau.
 
 ## Mô phỏng và thiết kế độc lập
 
