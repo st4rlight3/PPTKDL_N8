@@ -164,8 +164,6 @@ Chương trình dùng Python 3.12.14, NumPy 2.3.5, SciPy 1.16.3 và Matplotlib 3
 
 ## Phụ lục B. Bảng phân công của nhóm
 
-Nhóm bốc ngẫu nhiên năm đầu việc. Bảng dưới đây ghi cụ thể nội dung mỗi thành viên phụ trách và sản phẩm tương ứng.
-
 | Thành viên | Nhiệm vụ được giao | Sản phẩm đã có để đối chiếu | Đóng góp theo phân công |
 |---|---|---|---|
 | Phạm Gia Minh | Dữ liệu mô phỏng, seed và kiểm tra tái lập | Hai tệp dữ liệu gốc, cấu hình seed và nhật ký chạy lại | Kiểm tra cỡ mẫu, lưu seed và chạy lại để đối chiếu kết quả. |
